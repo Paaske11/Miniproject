@@ -1,36 +1,38 @@
-				String Filename = "username.txt"; 
-				String Passwordfile = "password.txt"; 
-				try {
-					PrintWriter Username  = new PrintWriter(Filename);
-					Username.println(RegiUser);                             // Making my program read my txt UsernameFile
-					Username.close();
-					// System.out.println("done"); 
-					PrintWriter Password = new PrintWriter(Passwordfile);
-					Password.println(RegiPass);
-					Password.close();                                       //This gives correct output, but the program doesn't think they match
-					// System.out.prinln("Password made"); 
+String Filename = "username.txt"; 
+String Passwordfile = "password.txt"; 
+	try {
+		PrintWriter Username  = new PrintWriter(Filename);
+		Username.println(RegiUser);                             // Making my program read my txt UsernameFile
+		Username.close();
+		// System.out.println("done"); 
+		PrintWriter Password = new PrintWriter(Passwordfile);
+		Password.println(RegiPass);
+		Password.close();                                       //This gives correct output, but the program doesn't think they match
+		// System.out.prinln("Password made"); 
 							
-				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-			JButton LoginButton = new JButton("Login");                                  // This is created with Windows builder (look further down)
-		LoginButton.setBackground(new Color(107, 142, 35));
-		LoginButton.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		LoginButton.setBounds(474, 393, 115, 29);
-		contentPane.add(LoginButton);
-		String Usertxt = (String) readFileAsString("username.txt"); 
-		LoginButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				String userInput = (String) UsernameField.getText();
-				if (Usertxt.equals(userInput(userInput))) {                                 //If written text equals to username file String
-					System.out.println("Super");                                              //Then do something.
+		} catch (FileNotFoundException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	}
+	JButton LoginButton = new JButton("Login");                                  // This is created with Windows builder (look further down)
+	LoginButton.setBackground(new Color(107, 142, 35));
+	LoginButton.setFont(new Font("Tahoma", Font.PLAIN, 22));
+	LoginButton.setBounds(474, 393, 115, 29);
+	contentPane.add(LoginButton);
+	String Usertxt = (String) readFileAsString("username.txt"); 
+	LoginButton.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			String userInput = (String) UsernameField.getText();
+			if (Usertxt.equals(userInput(userInput))) {                                 //If written text equals to username file String
+			System.out.println("Super");                                              //Then do something.
 					
-				}
-				else {
-					System.out.println("not super");
-					System.out.println(userInput);
-					System.out.println(Usertxt);                                              //Both outputs turn out the same, but still says "not
+			}
+			else {
+				System.out.println("not super");
+				System.out.println(userInput);
+				System.out.println(Usertxt);                                              //Both outputs turn out the same, but still says "not
                                                                                     //super" ... IDK why.
 				}
 			}
+			
+		
